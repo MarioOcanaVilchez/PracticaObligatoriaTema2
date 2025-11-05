@@ -9,9 +9,11 @@ public class PracticaObligatoriaTema2 {
         Scanner s = new Scanner(System.in);
         String user, password, selecMenu , selecMenu2 = " ",selecHabitacion ;//Las variables se pasan a minúsculas una vez las has pedido
         final String ADMIN_USER = "admin", ADMIN_PASSWORD = "admin";
-        boolean selecValida,habitacion1Doble = false,habitacion2Doble = false,habitacion3Doble = false,habitacion4Doble = false,habitacion5Doble = false,habitacion6Doble = false,habitacion7Doble = false,habitacion8Doble = false;
+        boolean selecValida,habitacion1Doble = false,habitacion2Doble = false,habitacion3Doble = false,habitacion4Doble = false,habitacion5Doble = false,habitacion6Doble = false,habitacion7Doble = false,habitacion8Doble = false,reservaHecha = false;
         boolean habitacion1Ind = false,habitacion2Ind = false;
         LocalDate inicioHabitacion101,inicioHabitacion102,inicioHabitacion201,inicioHabitacion202,inicioHabitacion203,inicioHabitacion204,inicioHabitacion205,inicioHabitacion206,inicioHabitacion207,inicioHabitacion208;
+        int numeroReserva101,numeroReserva102,numeroReserva201,numeroReserva202,numeroReserva203,numeroReserva204,numeroReserva205,numeroReserva206,numeroReserva207,numeroReserva208,numeroReservaActual = 1;
+
         //Creamos el bucle del menu
         do{
             //Pintar el menu
@@ -67,31 +69,11 @@ public class PracticaObligatoriaTema2 {
                                 if (!habitacion1Ind) {
                                     //Si la habitación está libre
                                     System.out.println("Has seleccionado la habitación 101");
-                                    //El cargando es meramente estética
-                                    System.out.print("Cargando");
-                                    for (int i = 0; i < 3; i++) {
-                                        System.out.print(". ");
-                                        try {
-                                            Thread.sleep(500);
-                                        } catch (InterruptedException e) {
-                                            throw new RuntimeException(e);
-                                        }
-                                    }
-
-                                    //Limpiamos la pantalla para quitar el cargando
-                                    for (int i = 0; i < 100; i++) {
-                                        System.out.println();
-                                    }
-
                                     //Guardamos la fecha y marcamos la habitación como ocupada
                                     inicioHabitacion101 = LocalDate.now();
                                     habitacion1Ind = true;
-                                    System.out.println("Habitación reservada con éxito");
-                                    System.out.println("Pulsa cualquier botón para salir... ");
-                                    s.nextLine();
-                                    for (int i = 0; i < 100; i++) {
-                                        System.out.println();
-                                    }
+                                    numeroReserva101 = numeroReservaActual;
+                                    reservaHecha = true;//Sirve para activar la animación de reserva finalizada
                                 } else {
                                     //Si la habitación está ocupada
                                     System.out.println("La habitación esta ocupada");
@@ -107,27 +89,12 @@ public class PracticaObligatoriaTema2 {
                                 if (!habitacion2Ind) {
                                     //Si la habitación está libre
                                     System.out.println("Has seleccionado la habitación 102");
-                                    System.out.print("Cargando");
-                                    for (int i = 0; i < 3; i++) {
-                                        System.out.print(". ");
-                                        try {
-                                            Thread.sleep(500);
-                                        } catch (InterruptedException e) {
-                                            throw new RuntimeException(e);
-                                        }
-                                    }
-                                    for (int i = 0; i < 100; i++) {
-                                        System.out.println();
-                                    }
+
                                     //Guardamos la fecha y marcamos la habitación como ocupada
                                     inicioHabitacion102 = LocalDate.now();
                                     habitacion2Ind = true;
-                                    System.out.println("Habitación reservada con éxito");
-                                    System.out.println("Pulsa cualquier botón para salir... ");
-                                    s.nextLine();
-                                    for (int i = 0; i < 100; i++) {
-                                        System.out.println();
-                                    }
+                                    numeroReserva102 = numeroReservaActual;
+                                    reservaHecha = true;
                                 } else {
                                     //Si la habitación está ocupada
                                     System.out.println("La habitación esta ocupada");
@@ -143,28 +110,12 @@ public class PracticaObligatoriaTema2 {
                                 if (!habitacion1Doble) {
                                     //Si la habitación está libre
                                     System.out.println("Has seleccionado la habitación 201");
-                                    System.out.print("Cargando");
-                                    for (int i = 0; i < 3; i++) {
-                                        System.out.print(". ");
-                                        try {
-                                            Thread.sleep(500);
-                                        } catch (InterruptedException e) {
-                                            throw new RuntimeException(e);
-                                        }
-                                    }
-                                    for (int i = 0; i < 100; i++) {
-                                        System.out.println();
-                                    }
-                                    System.out.println();
+
                                     //Guardamos la fecha y marcamos la habitación como ocupada
                                     inicioHabitacion201 = LocalDate.now();
                                     habitacion1Doble = true;
-                                    System.out.println("Habitación reservada con éxito");
-                                    System.out.println("Pulsa cualquier botón para salir... ");
-                                    s.nextLine();
-                                    for (int i = 0; i < 100; i++) {
-                                        System.out.println();
-                                    }
+                                    numeroReserva201 = numeroReservaActual;
+                                    reservaHecha = true;
                                 } else {
                                     //Si la habitación está ocupada
                                     System.out.println("La habitación esta ocupada");
@@ -180,27 +131,12 @@ public class PracticaObligatoriaTema2 {
                                 if (!habitacion2Doble) {
                                     //Si la habitación está libre
                                     System.out.println("Has seleccionado la habitación 202");
-                                    System.out.print("Cargando");
-                                    for (int i = 0; i < 3; i++) {
-                                        System.out.print(". ");
-                                        try {
-                                            Thread.sleep(500);
-                                        } catch (InterruptedException e) {
-                                            throw new RuntimeException(e);
-                                        }
-                                    }
-                                    for (int i = 0; i < 100; i++) {
-                                        System.out.println();
-                                    }
+
                                     //Guardamos la fecha y marcamos la habitación como ocupada
                                     inicioHabitacion202 = LocalDate.now();
                                     habitacion2Doble = true;
-                                    System.out.println("Habitación reservada con éxito");
-                                    System.out.println("Pulsa cualquier botón para salir... ");
-                                    s.nextLine();
-                                    for (int i = 0; i < 100; i++) {
-                                        System.out.println();
-                                    }
+                                    numeroReserva202 = numeroReservaActual;
+                                    reservaHecha = true;
                                 } else {
                                     //Si la habitación está ocupada
                                     System.out.println("La habitación esta ocupada");
@@ -216,27 +152,13 @@ public class PracticaObligatoriaTema2 {
                                 if (!habitacion3Doble) {
                                     //Si la habitación está libre
                                     System.out.println("Has seleccionado la habitación 203");
-                                    System.out.print("Cargando");
-                                    for (int i = 0; i < 3; i++) {
-                                        System.out.print(". ");
-                                        try {
-                                            Thread.sleep(500);
-                                        } catch (InterruptedException e) {
-                                            throw new RuntimeException(e);
-                                        }
-                                    }
-                                    for (int i = 0; i < 100; i++) {
-                                        System.out.println();
-                                    }
+
                                     //Guardamos la fecha y marcamos la habitación como ocupada
                                     inicioHabitacion203 = LocalDate.now();
-                                    System.out.println("Habitación reservada con éxito");
+                                    numeroReserva203 = numeroReservaActual;
+                                    reservaHecha = true;
                                     habitacion3Doble = true;
-                                    System.out.println("Pulsa cualquier botón para salir... ");
-                                    s.nextLine();
-                                    for (int i = 0; i < 100; i++) {
-                                        System.out.println();
-                                    }
+
                                 } else {
                                     //Si la habitación está ocupada
                                     System.out.println("La habitación esta ocupada");
@@ -252,27 +174,12 @@ public class PracticaObligatoriaTema2 {
                                 if (!habitacion4Doble) {
                                     //Si la habitación está libre
                                     System.out.println("Has seleccionado la habitación 204");
-                                    System.out.print("Cargando");
-                                    for (int i = 0; i < 3; i++) {
-                                        System.out.print(". ");
-                                        try {
-                                            Thread.sleep(500);
-                                        } catch (InterruptedException e) {
-                                            throw new RuntimeException(e);
-                                        }
-                                    }
-                                    for (int i = 0; i < 100; i++) {
-                                        System.out.println();
-                                    }
+
                                     //Guardamos la fecha y marcamos la habitación como ocupada
                                     inicioHabitacion204 = LocalDate.now();
-                                    System.out.println("Habitación reservada con éxito");
+                                    numeroReserva204 = numeroReservaActual;
+                                    reservaHecha = true;
                                     habitacion4Doble = true;
-                                    System.out.println("Pulsa cualquier botón para salir... ");
-                                    s.nextLine();
-                                    for (int i = 0; i < 100; i++) {
-                                        System.out.println();
-                                    }
                                 } else {
                                     //Si la habitación está ocupada
                                     System.out.println("La habitación esta ocupada");
@@ -288,27 +195,12 @@ public class PracticaObligatoriaTema2 {
                                 if (!habitacion5Doble) {
                                     //Si la habitación está libre
                                     System.out.println("Has seleccionado la habitación 205");
-                                    System.out.print("Cargando");
-                                    for (int i = 0; i < 3; i++) {
-                                        System.out.print(". ");
-                                        try {
-                                            Thread.sleep(500);
-                                        } catch (InterruptedException e) {
-                                            throw new RuntimeException(e);
-                                        }
-                                    }
-                                    for (int i = 0; i < 100; i++) {
-                                        System.out.println();
-                                    }
+
                                     //Guardamos la fecha y marcamos la habitación como ocupada
                                     inicioHabitacion205 = LocalDate.now();
-                                    System.out.println("Habitación reservada con éxito");
+                                    numeroReserva205 = numeroReservaActual;
+                                    reservaHecha = true;
                                     habitacion5Doble = true;
-                                    System.out.println("Pulsa cualquier botón para salir... ");
-                                    s.nextLine();
-                                    for (int i = 0; i < 100; i++) {
-                                        System.out.println();
-                                    }
                                 } else {
                                     //Si la habitación está ocupada
                                     System.out.println("La habitación esta ocupada");
@@ -324,27 +216,12 @@ public class PracticaObligatoriaTema2 {
                                 if (!habitacion6Doble) {
                                     //Si la habitación está libre
                                     System.out.println("Has seleccionado la habitación 206");
-                                    System.out.print("Cargando");
-                                    for (int i = 0; i < 3; i++) {
-                                        System.out.print(". ");
-                                        try {
-                                            Thread.sleep(500);
-                                        } catch (InterruptedException e) {
-                                            throw new RuntimeException(e);
-                                        }
-                                    }
-                                    for (int i = 0; i < 100; i++) {
-                                        System.out.println();
-                                    }
+
                                     //Guardamos la fecha y marcamos la habitación como ocupada
                                     inicioHabitacion206 = LocalDate.now();
-                                    System.out.println("Habitación reservada con éxito");
+                                    numeroReserva206 = numeroReservaActual;
+                                    reservaHecha = true;
                                     habitacion6Doble = true;
-                                    System.out.println("Pulsa cualquier botón para salir... ");
-                                    s.nextLine();
-                                    for (int i = 0; i < 100; i++) {
-                                        System.out.println();
-                                    }
                                 } else {
                                     //Si la habitación está ocupada
                                     System.out.println("La habitación esta ocupada");
@@ -360,27 +237,11 @@ public class PracticaObligatoriaTema2 {
                                 if (!habitacion7Doble) {
                                     //Si la habitación está libre
                                     System.out.println("Has seleccionado la habitación 207");
-                                    System.out.print("Cargando");
-                                    for (int i = 0; i < 3; i++) {
-                                        System.out.print(". ");
-                                        try {
-                                            Thread.sleep(500);
-                                        } catch (InterruptedException e) {
-                                            throw new RuntimeException(e);
-                                        }
-                                    }
-                                    for (int i = 0; i < 100; i++) {
-                                        System.out.println();
-                                    }
                                     //Guardamos la fecha y marcamos la habitación como ocupada
                                     inicioHabitacion207 = LocalDate.now();
-                                    System.out.println("Habitación reservada con éxito");
+                                    numeroReserva207 = numeroReservaActual;
                                     habitacion7Doble = true;
-                                    System.out.println("Pulsa cualquier botón para salir... ");
-                                    s.nextLine();
-                                    for (int i = 0; i < 100; i++) {
-                                        System.out.println();
-                                    }
+                                    reservaHecha = true;
                                 } else {
                                     //Si la habitación está ocupada
                                     System.out.println("La habitación esta ocupada");
@@ -396,27 +257,13 @@ public class PracticaObligatoriaTema2 {
                                 if (!habitacion8Doble) {
                                     //Si la habitación está libre
                                     System.out.println("Has seleccionado la habitación 208");
-                                    System.out.print("Cargando");
-                                    for (int i = 0; i < 3; i++) {
-                                        System.out.print(". ");
-                                        try {
-                                            Thread.sleep(500);
-                                        } catch (InterruptedException e) {
-                                            throw new RuntimeException(e);
-                                        }
-                                    }
-                                    for (int i = 0; i < 100; i++) {
-                                        System.out.println();
-                                    }
+
                                     //Guardamos la fecha y marcamos la habitación como ocupada
                                     inicioHabitacion208 = LocalDate.now();
-                                    System.out.println("Habitación reservada con éxito");
+                                    numeroReserva208 = numeroReservaActual;
                                     habitacion8Doble = true;
-                                    System.out.println("Pulsa cualquier botón para salir... ");
-                                    s.nextLine();
-                                    for (int i = 0; i < 100; i++) {
-                                        System.out.println();
-                                    }
+                                    reservaHecha = true;
+
                                 } else {
                                     //Si la habitación está ocupada
                                     System.out.println("La habitación esta ocupada");
@@ -438,10 +285,55 @@ public class PracticaObligatoriaTema2 {
                                 selecValida = false;
 
                         }
+                        if (reservaHecha) {
+                            //Animación de reserva finalizada (solo es estético)
+                            System.out.print("Cargando");
+                            for (int i = 0; i < 3; i++) {
+                                System.out.print(". ");
+                                try {
+                                    Thread.sleep(500);
+                                } catch (InterruptedException e) {
+                                    throw new RuntimeException(e);
+                                }
+                            }
+                            for (int i = 0; i < 100; i++) {
+                                System.out.println();
+
+                            }
+                            numeroReservaActual += 1;
+                            System.out.println("Habitación reservada con éxito");
+                            System.out.println("Pulsa cualquier botón para salir... ");
+                            s.nextLine();
+                            for (int i = 0; i < 100; i++) {
+                                System.out.println();
+                            }
+                            for (int i = 0; i < 100; i++) {
+                                System.out.println();
+                            }
+                            reservaHecha = false;
+                        }
                     }while (!(selecHabitacion.equals("salir")) && !selecValida );
                     break;
                 case "c":
                     System.out.println("Has escogido la opción: Realizar el checkout de una habitación");
+                    do {
+                        System.out.println("Las habitaciónes ocupadas son: ");
+                        if (habitacion1Ind) System.out.println("Habitación 101");
+                        if (habitacion2Ind) System.out.println("Habitación 102");
+                        if (habitacion1Doble) System.out.println("Habitación 201");
+                        if (habitacion2Doble) System.out.println("Habitación 202");
+                        if (habitacion3Doble) System.out.println("Habitación 203");
+                        if (habitacion4Doble) System.out.println("Habitación 204");
+                        if (habitacion5Doble) System.out.println("Habitación 205");
+                        if (habitacion6Doble) System.out.println("Habitación 206");
+                        if (habitacion7Doble) System.out.println("Habitación 207");
+                        if (habitacion8Doble) System.out.println("Habitación 208");
+                        System.out.print("De que habitación quieres realizar el checkout: ");
+                        selecHabitacion = s.nextLine();
+                        System.out.println("No programado todavía pero es parecido al apartado b");
+                        selecValida = true;
+                    }while(!selecValida);
+
                     break;
                 case "d":
                     System.out.println("Has escogido la opción: Menú de Administrador");
