@@ -12,7 +12,8 @@ public class PracticaObligatoriaTema2 {
         boolean selecValida,habitacion1Doble = false,habitacion2Doble = false,habitacion3Doble = false,habitacion4Doble = false,habitacion5Doble = false,habitacion6Doble = false,habitacion7Doble = false,habitacion8Doble = false,reservaHecha = false;
         boolean habitacion1Ind = false,habitacion2Ind = false;
         LocalDate inicioHabitacion101,inicioHabitacion102,inicioHabitacion201,inicioHabitacion202,inicioHabitacion203,inicioHabitacion204,inicioHabitacion205,inicioHabitacion206,inicioHabitacion207,inicioHabitacion208;
-        int numeroReserva101,numeroReserva102,numeroReserva201,numeroReserva202,numeroReserva203,numeroReserva204,numeroReserva205,numeroReserva206,numeroReserva207,numeroReserva208,numeroReservaActual = 1;
+        int numeroReserva101,numeroReserva102,numeroReserva201,numeroReserva202,numeroReserva203,numeroReserva204,numeroReserva205,numeroReserva206,numeroReserva207,numeroReserva208,numeroReservaActual = 1,caracterValido = 0;
+        String nombre101,nombre102,nombre201,nombre202,nombre203,nombre204,nombre205,nombre206,nombre207,nombre208;
 
         //Creamos el bucle del menu
         do{
@@ -69,6 +70,18 @@ public class PracticaObligatoriaTema2 {
                                 if (!habitacion1Ind) {
                                     //Si la habitación está libre
                                     System.out.println("Has seleccionado la habitación 101");
+                                    //Pedimos nombre de quien está a cargo
+                                    do {
+                                        caracterValido = 0;
+                                    System.out.print("Introduce el nombre de la persona a cargo de la reserva: ");
+                                    nombre101 = s.nextLine();
+                                    //Validamos el nombre
+                                        for (int i = 0; i < nombre101.length(); i++) {
+                                            if (Character.isLetter(nombre101.charAt(i)) || Character.isWhitespace(nombre101.charAt(i)))
+                                                caracterValido++;
+                                        }
+                                        if (caracterValido != nombre101.length() || nombre101.length() < 3) System.out.println("Nombre no válido");
+                                    }while(caracterValido != nombre101.length() || nombre101.length() < 3);
                                     //Guardamos la fecha y marcamos la habitación como ocupada
                                     inicioHabitacion101 = LocalDate.now();
                                     habitacion1Ind = true;
@@ -89,6 +102,19 @@ public class PracticaObligatoriaTema2 {
                                 if (!habitacion2Ind) {
                                     //Si la habitación está libre
                                     System.out.println("Has seleccionado la habitación 102");
+                                    //Pedimos nombre de quien está a cargo
+                                    do {
+                                        caracterValido = 0;
+
+                                        System.out.print("Introduce el nombre de la persona a cargo de la reserva: ");
+                                        nombre102 = s.nextLine();
+                                        //Validamos el nombre
+                                        for (int i = 0; i < nombre102.length(); i++) {
+                                            if (Character.isLetter(nombre102.charAt(i)) || Character.isWhitespace(nombre102.charAt(i)))
+                                                caracterValido++;
+                                        }
+                                        if (caracterValido != nombre102.length() || nombre102.length() < 3) System.out.println("Nombre no válido");
+                                    }while(caracterValido != nombre102.length() || nombre102.length() < 3);
 
                                     //Guardamos la fecha y marcamos la habitación como ocupada
                                     inicioHabitacion102 = LocalDate.now();
@@ -110,6 +136,19 @@ public class PracticaObligatoriaTema2 {
                                 if (!habitacion1Doble) {
                                     //Si la habitación está libre
                                     System.out.println("Has seleccionado la habitación 201");
+                                    //Pedimos nombre de quien está a cargo
+                                    do {
+                                        caracterValido = 0;
+
+                                        System.out.print("Introduce el nombre de la persona a cargo de la reserva: ");
+                                        nombre201 = s.nextLine();
+                                        //Validamos el nombre
+                                        for (int i = 0; i < nombre201.length(); i++) {
+                                            if (Character.isLetter(nombre201.charAt(i)) || Character.isWhitespace(nombre201.charAt(i)))
+                                                caracterValido++;
+                                        }
+                                        if (caracterValido != nombre201.length() || nombre201.length() < 3) System.out.println("Nombre no válido");
+                                    }while(caracterValido != nombre201.length() || nombre201.length() < 3);
 
                                     //Guardamos la fecha y marcamos la habitación como ocupada
                                     inicioHabitacion201 = LocalDate.now();
@@ -131,6 +170,19 @@ public class PracticaObligatoriaTema2 {
                                 if (!habitacion2Doble) {
                                     //Si la habitación está libre
                                     System.out.println("Has seleccionado la habitación 202");
+                                    //Pedimos nombre de quien está a cargo
+                                    do {
+                                        caracterValido = 0;
+
+                                        System.out.print("Introduce el nombre de la persona a cargo de la reserva: ");
+                                        nombre202 = s.nextLine();
+                                        //Validamos el nombre
+                                        for (int i = 0; i < nombre202.length(); i++) {
+                                            if (Character.isLetter(nombre202.charAt(i)) || Character.isWhitespace(nombre202.charAt(i)))
+                                                caracterValido++;
+                                        }
+                                        if (caracterValido != nombre202.length() || nombre202.length() < 3) System.out.println("Nombre no válido");
+                                    }while(caracterValido != nombre202.length() || nombre202.length() < 3);
 
                                     //Guardamos la fecha y marcamos la habitación como ocupada
                                     inicioHabitacion202 = LocalDate.now();
@@ -152,6 +204,19 @@ public class PracticaObligatoriaTema2 {
                                 if (!habitacion3Doble) {
                                     //Si la habitación está libre
                                     System.out.println("Has seleccionado la habitación 203");
+                                    //Pedimos nombre de quien está a cargo
+                                    do {
+                                        caracterValido = 0;
+
+                                        System.out.print("Introduce el nombre de la persona a cargo de la reserva: ");
+                                        nombre203 = s.nextLine();
+                                        //Validamos el nombre
+                                        for (int i = 0; i < nombre203.length(); i++) {
+                                            if (Character.isLetter(nombre203.charAt(i)) || Character.isWhitespace(nombre203.charAt(i)))
+                                                caracterValido++;
+                                        }
+                                        if (caracterValido != nombre203.length() || nombre203.length() < 3) System.out.println("Nombre no válido");
+                                    }while(caracterValido != nombre203.length() || nombre203.length() < 3);
 
                                     //Guardamos la fecha y marcamos la habitación como ocupada
                                     inicioHabitacion203 = LocalDate.now();
@@ -174,6 +239,19 @@ public class PracticaObligatoriaTema2 {
                                 if (!habitacion4Doble) {
                                     //Si la habitación está libre
                                     System.out.println("Has seleccionado la habitación 204");
+                                    //Pedimos nombre de quien está a cargo
+                                    do {
+                                        caracterValido = 0;
+
+                                        System.out.print("Introduce el nombre de la persona a cargo de la reserva: ");
+                                        nombre204 = s.nextLine();
+                                        //Validamos el nombre
+                                        for (int i = 0; i < nombre204.length(); i++) {
+                                            if (Character.isLetter(nombre204.charAt(i)) || Character.isWhitespace(nombre204.charAt(i)))
+                                                caracterValido++;
+                                        }
+                                        if (caracterValido != nombre204.length() || nombre204.length() < 3) System.out.println("Nombre no válido");
+                                    }while(caracterValido != nombre204.length() || nombre204.length() < 3);
 
                                     //Guardamos la fecha y marcamos la habitación como ocupada
                                     inicioHabitacion204 = LocalDate.now();
@@ -195,6 +273,19 @@ public class PracticaObligatoriaTema2 {
                                 if (!habitacion5Doble) {
                                     //Si la habitación está libre
                                     System.out.println("Has seleccionado la habitación 205");
+                                    //Pedimos nombre de quien está a cargo
+                                    do {
+                                        caracterValido = 0;
+
+                                        System.out.print("Introduce el nombre de la persona a cargo de la reserva: ");
+                                        nombre205 = s.nextLine();
+                                        //Validamos el nombre
+                                        for (int i = 0; i < nombre205.length(); i++) {
+                                            if (Character.isLetter(nombre205.charAt(i)) || Character.isWhitespace(nombre205.charAt(i)))
+                                                caracterValido++;
+                                        }
+                                        if (caracterValido != nombre205.length() || nombre205.length() < 3) System.out.println("Nombre no válido");
+                                    }while(caracterValido != nombre205.length() || nombre205.length() < 3);
 
                                     //Guardamos la fecha y marcamos la habitación como ocupada
                                     inicioHabitacion205 = LocalDate.now();
@@ -216,6 +307,19 @@ public class PracticaObligatoriaTema2 {
                                 if (!habitacion6Doble) {
                                     //Si la habitación está libre
                                     System.out.println("Has seleccionado la habitación 206");
+                                    //Pedimos nombre de quien está a cargo
+                                    do {
+                                        caracterValido = 0;
+
+                                        System.out.print("Introduce el nombre de la persona a cargo de la reserva: ");
+                                        nombre206 = s.nextLine();
+                                        //Validamos el nombre
+                                        for (int i = 0; i < nombre206.length(); i++) {
+                                            if (Character.isLetter(nombre206.charAt(i)) || Character.isWhitespace(nombre206.charAt(i)))
+                                                caracterValido++;
+                                        }
+                                        if (caracterValido != nombre206.length() || nombre206.length() < 3) System.out.println("Nombre no válido");
+                                    }while(caracterValido != nombre206.length() || nombre206.length() < 3);
 
                                     //Guardamos la fecha y marcamos la habitación como ocupada
                                     inicioHabitacion206 = LocalDate.now();
@@ -237,6 +341,20 @@ public class PracticaObligatoriaTema2 {
                                 if (!habitacion7Doble) {
                                     //Si la habitación está libre
                                     System.out.println("Has seleccionado la habitación 207");
+                                    //Pedimos nombre de quien está a cargo
+                                    do {
+                                        caracterValido = 0;
+
+                                        System.out.print("Introduce el nombre de la persona a cargo de la reserva: ");
+                                        nombre207 = s.nextLine();
+                                        //Validamos el nombre
+                                        for (int i = 0; i < nombre207.length(); i++) {
+                                            if (Character.isLetter(nombre207.charAt(i)) || Character.isWhitespace(nombre207.charAt(i)))
+                                                caracterValido++;
+                                        }
+                                        if (caracterValido != nombre207.length() || nombre207.length() < 3) System.out.println("Nombre no válido");
+                                    }while(caracterValido != nombre207.length() || nombre207.length() < 3);
+
                                     //Guardamos la fecha y marcamos la habitación como ocupada
                                     inicioHabitacion207 = LocalDate.now();
                                     numeroReserva207 = numeroReservaActual;
@@ -257,6 +375,19 @@ public class PracticaObligatoriaTema2 {
                                 if (!habitacion8Doble) {
                                     //Si la habitación está libre
                                     System.out.println("Has seleccionado la habitación 208");
+                                    //Pedimos nombre de quien está a cargo
+                                    do {
+                                        caracterValido = 0;
+
+                                        System.out.print("Introduce el nombre de la persona a cargo de la reserva: ");
+                                        nombre208 = s.nextLine();
+                                        //Validamos el nombre
+                                        for (int i = 0; i < nombre208.length(); i++) {
+                                            if (Character.isLetter(nombre208.charAt(i)) || Character.isWhitespace(nombre208.charAt(i)))
+                                                caracterValido++;
+                                        }
+                                        if (caracterValido != nombre208.length() || nombre208.length() < 3) System.out.println("Nombre no válido");
+                                    }while(caracterValido != nombre208.length() || nombre208.length() < 3);
 
                                     //Guardamos la fecha y marcamos la habitación como ocupada
                                     inicioHabitacion208 = LocalDate.now();
