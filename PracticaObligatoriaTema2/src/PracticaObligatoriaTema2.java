@@ -1,19 +1,23 @@
+package proyecto;
+import javax.xml.crypto.Data;
 import java.time.LocalDate;
+import java.util.Date;
 import java.util.Scanner;
-//Que es package proyecto;? que me da error al ponerlo
-
 
 public class PracticaObligatoriaTema2 {
-    static void main() {
+    public static void main(String[] args) {
         //Definir variables
         Scanner s = new Scanner(System.in);
         String user, password, selecMenu , selecMenu2 = " ",selecHabitacion ;//Las variables se pasan a minúsculas una vez las has pedido
         final String ADMIN_USER = "admin", ADMIN_PASSWORD = "admin";
         boolean selecValida,habitacion1Doble = false,habitacion2Doble = false,habitacion3Doble = false,habitacion4Doble = false,habitacion5Doble = false,habitacion6Doble = false,habitacion7Doble = false,habitacion8Doble = false,reservaHecha = false;
-        boolean habitacion1Ind = false,habitacion2Ind = false;
-        LocalDate inicioHabitacion101,inicioHabitacion102,inicioHabitacion201,inicioHabitacion202,inicioHabitacion203,inicioHabitacion204,inicioHabitacion205,inicioHabitacion206,inicioHabitacion207,inicioHabitacion208;
+        boolean habitacion1Ind = false,habitacion2Ind = false, checkoutHecho = false;
+        LocalDate inicioHabitacion101,inicioHabitacion102,inicioHabitacion201,inicioHabitacion202,inicioHabitacion203,inicioHabitacion204,inicioHabitacion205,inicioHabitacion206,inicioHabitacion207,inicioHabitacion208, fechaSalida;
         int numeroReserva101,numeroReserva102,numeroReserva201,numeroReserva202,numeroReserva203,numeroReserva204,numeroReserva205,numeroReserva206,numeroReserva207,numeroReserva208,numeroReservaActual = 1,caracterValido = 0;
-        String nombre101,nombre102,nombre201,nombre202,nombre203,nombre204,nombre205,nombre206,nombre207,nombre208;
+        String nombreCheck, nombre101 = "",nombre102 = "",nombre201 = "",nombre202 = "",nombre203 = "",nombre204 = "",nombre205 = "",nombre206 = "",nombre207 = "",nombre208 = "";
+
+        //He metido las variables fechaSalida para introducir la fecha de salida y checkoutHecho para registrar el checkout (esta luego esta abajo para que se ponga siempre en false)
+        //Tambien he tenido que inicializar los nombres por que me daba error
 
         //Creamos el bucle del menu
         do{
@@ -73,9 +77,9 @@ public class PracticaObligatoriaTema2 {
                                     //Pedimos nombre de quien está a cargo
                                     do {
                                         caracterValido = 0;
-                                    System.out.print("Introduce el nombre de la persona a cargo de la reserva: ");
-                                    nombre101 = s.nextLine();
-                                    //Validamos el nombre
+                                        System.out.print("Introduce el nombre de la persona a cargo de la reserva: ");
+                                        nombre101 = s.nextLine();
+                                        //Validamos el nombre
                                         for (int i = 0; i < nombre101.length(); i++) {
                                             if (Character.isLetter(nombre101.charAt(i)) || Character.isWhitespace(nombre101.charAt(i)))
                                                 caracterValido++;
@@ -461,11 +465,229 @@ public class PracticaObligatoriaTema2 {
                         if (habitacion8Doble) System.out.println("Habitación 208");
                         System.out.print("De que habitación quieres realizar el checkout: ");
                         selecHabitacion = s.nextLine();
-                        System.out.println("No programado todavía pero es parecido al apartado b");
-                        selecValida = true;
-                    }while(!selecValida);
 
-                    break;
+                        checkoutHecho = false;
+
+                        switch (selecHabitacion){
+                            case "101":
+                                //Introducir el nombre de la reserva
+                                if (habitacion1Ind){
+                                    System.out.print("Introduce tu nombre para verificar la reserva: ");
+                                    nombreCheck = s.nextLine();
+                                    //Comprueba si el nombre es correcto
+                                    if (nombreCheck.equals(nombre101)){
+//                                        System.out.print("Introduce la fecha de salida (YYYY-MM-DD): ");
+//                                        fechaSalida = LocalDate.parse(s.nextLine());
+                                        System.out.println("Checkout realizado con éxito para " + nombre101);
+                                        //Vacia las variables del nombre y de la habitación
+                                        habitacion1Ind = false;
+                                        nombre101 = null;
+                                        checkoutHecho = true;
+                                    } else {
+                                        System.out.println("El nombre no coincide con la reserva");
+                                    }
+                                }else {
+                                    System.out.println("La habitación 101 no esta ocupada");
+                                }
+                                break;
+                            case "102":
+                                //Introducir el nombre de la reserva
+                                if (habitacion2Ind){
+                                    System.out.print("Introduce tu nombre para verificar la reserva: ");
+                                    nombreCheck = s.nextLine();
+                                    //Comprueba si el nombre es correcto
+                                    if (nombreCheck.equals(nombre102)){
+//                                        System.out.print("Introduce la fecha de salida (YYYY-MM-DD): ");
+//                                        fechaSalida = LocalDate.parse(s.nextLine());
+                                        System.out.println("Checkout realizado con éxito para " + nombre102);
+                                        //Vacia las variables del nombre y de la habitación
+                                        habitacion2Ind = false;
+                                        nombre102 = null;
+                                        checkoutHecho = true;
+                                    } else {
+                                        System.out.println("El nombre no coincide con la reserva");
+                                    }
+                                }else {
+                                    System.out.println("La habitación 102 no esta ocupada");
+                                }
+                                break;
+                            case "201":
+                                //Introducir el nombre de la reserva
+                                if (habitacion1Doble){
+                                    System.out.print("Introduce tu nombre para verificar la reserva: ");
+                                    nombreCheck = s.nextLine();
+                                    //Comprueba si el nombre es correcto
+                                    if (nombreCheck.equals(nombre201)){
+//                                        System.out.print("Introduce la fecha de salida (YYYY-MM-DD): ");
+//                                        fechaSalida = LocalDate.parse(s.nextLine());
+                                        System.out.println("Checkout realizado con éxito para " + nombre201);
+                                        //Vacia las variables del nombre y de la habitación
+                                        habitacion1Doble = false;
+                                        nombre201 = null;
+                                        checkoutHecho = true;
+                                    } else {
+                                        System.out.println("El nombre no coincide con la reserva");
+                                    }
+                                }else {
+                                    System.out.println("La habitación 201 no esta ocupada");
+                                }
+                                break;
+                            case "202":
+                                //Introducir el nombre de la reserva
+                                if (habitacion2Doble){
+                                    System.out.print("Introduce tu nombre para verificar la reserva: ");
+                                    nombreCheck = s.nextLine();
+                                    //Comprueba si el nombre es correcto
+                                    if (nombreCheck.equals(nombre202)){
+//                                        System.out.print("Introduce la fecha de salida (YYYY-MM-DD): ");
+//                                        fechaSalida = LocalDate.parse(s.nextLine());
+                                        System.out.println("Checkout realizado con éxito para " + nombre202);
+                                        //Vacia las variables del nombre y de la habitación
+                                        habitacion1Ind = false;
+                                        nombre202 = null;
+                                        checkoutHecho = true;
+                                    } else {
+                                        System.out.println("El nombre no coincide con la reserva");
+                                    }
+                                }else {
+                                    System.out.println("La habitación 202 no esta ocupada");
+                                }
+                                break;
+                            case "203":
+                                //Introducir el nombre de la reserva
+                                if (habitacion3Doble){
+                                    System.out.print("Introduce tu nombre para verificar la reserva: ");
+                                    nombreCheck = s.nextLine();
+                                    //Comprueba si el nombre es correcto
+                                    if (nombreCheck.equals(nombre203)){
+//                                        System.out.print("Introduce la fecha de salida (YYYY-MM-DD): ");
+//                                        fechaSalida = LocalDate.parse(s.nextLine());
+                                        System.out.println("Checkout realizado con éxito para " + nombre203);
+                                        //Vacia las variables del nombre y de la habitación
+                                        habitacion1Ind = false;
+                                        nombre203 = null;
+                                        checkoutHecho = true;
+                                    } else {
+                                        System.out.println("El nombre no coincide con la reserva");
+                                    }
+                                }else {
+                                    System.out.println("La habitación 203 no esta ocupada");
+                                }
+                                break;
+                            case "204":
+                                //Introducir el nombre de la reserva
+                                if (habitacion4Doble){
+                                    System.out.print("Introduce tu nombre para verificar la reserva: ");
+                                    nombreCheck = s.nextLine();
+                                    //Comprueba si el nombre es correcto
+                                    if (nombreCheck.equals(nombre204)){
+//                                        System.out.print("Introduce la fecha de salida (YYYY-MM-DD): ");
+//                                        fechaSalida = LocalDate.parse(s.nextLine());
+                                        System.out.println("Checkout realizado con éxito para " + nombre204);
+                                        //Vacia las variables del nombre y de la habitación
+                                        habitacion1Ind = false;
+                                        nombre204 = null;
+                                        checkoutHecho = true;
+                                    } else {
+                                        System.out.println("El nombre no coincide con la reserva");
+                                    }
+                                }else {
+                                    System.out.println("La habitación 204 no esta ocupada");
+                                }
+                                break;
+                            case "205":
+                                //Introducir el nombre de la reserva
+                                if (habitacion5Doble){
+                                    System.out.print("Introduce tu nombre para verificar la reserva: ");
+                                    nombreCheck = s.nextLine();
+                                    //Comprueba si el nombre es correcto
+                                    if (nombreCheck.equals(nombre205)){
+//                                        System.out.print("Introduce la fecha de salida (YYYY-MM-DD): ");
+//                                        fechaSalida = LocalDate.parse(s.nextLine());
+                                        System.out.println("Checkout realizado con éxito para " + nombre205);
+                                        //Vacia las variables del nombre y de la habitación
+                                        habitacion1Ind = false;
+                                        nombre205 = null;
+                                        checkoutHecho = true;
+                                    } else {
+                                        System.out.println("El nombre no coincide con la reserva");
+                                    }
+                                }else {
+                                    System.out.println("La habitación 101 no esta ocupada");
+                                }
+                                break;
+                            case "206":
+                                //Introducir el nombre de la reserva
+                                if (habitacion6Doble){
+                                    System.out.print("Introduce tu nombre para verificar la reserva: ");
+                                    nombreCheck = s.nextLine();
+                                    //Comprueba si el nombre es correcto
+                                    if (nombreCheck.equals(nombre206)){
+//                                        System.out.print("Introduce la fecha de salida (YYYY-MM-DD): ");
+//                                        fechaSalida = LocalDate.parse(s.nextLine());
+                                        System.out.println("Checkout realizado con éxito para " + nombre206);
+                                        //Vacia las variables del nombre y de la habitación
+                                        habitacion1Ind = false;
+                                        nombre206 = null;
+                                        checkoutHecho = true;
+                                    } else {
+                                        System.out.println("El nombre no coincide con la reserva");
+                                    }
+                                }else {
+                                    System.out.println("La habitación 206 no esta ocupada");
+                                }
+                                break;
+                            case "207":
+                                //Introducir el nombre de la reserva
+                                if (habitacion7Doble){
+                                    System.out.print("Introduce tu nombre para verificar la reserva: ");
+                                    nombreCheck = s.nextLine();
+                                    //Comprueba si el nombre es correcto
+                                    if (nombreCheck.equals(nombre207)){
+//                                        System.out.print("Introduce la fecha de salida (YYYY-MM-DD): ");
+//                                        fechaSalida = LocalDate.parse(s.nextLine());
+                                        System.out.println("Checkout realizado con éxito para " + nombre207);
+                                        //Vacia las variables del nombre y de la habitación
+                                        habitacion1Ind = false;
+                                        nombre207 = null;
+                                        checkoutHecho = true;
+                                    } else {
+                                        System.out.println("El nombre no coincide con la reserva");
+                                    }
+                                }else {
+                                    System.out.println("La habitación 207 no esta ocupada");
+                                }
+                                break;
+                            case "208":
+                                //Introducir el nombre de la reserva
+                                if (habitacion8Doble){
+                                    System.out.print("Introduce tu nombre para verificar la reserva: ");
+                                    nombreCheck = s.nextLine();
+                                    //Comprueba si el nombre es correcto
+                                    if (nombreCheck.equals(nombre208)){
+//                                        System.out.print("Introduce la fecha de salida (YYYY-MM-DD): ");
+//                                        fechaSalida = LocalDate.parse(s.nextLine());
+                                        System.out.println("Checkout realizado con éxito para " + nombre208);
+                                        //Vacia las variables del nombre y de la habitación
+                                        habitacion1Ind = false;
+                                        nombre208 = null;
+                                        checkoutHecho = true;
+                                    } else {
+                                        System.out.println("El nombre no coincide con la reserva");
+                                    }
+                                }else {
+                                    System.out.println("La habitación 208 no esta ocupada");
+                                }
+                                break;
+                                
+                        }
+                        //Si el checkout esta realizado mandamos mensaje y salimos
+                        if (checkoutHecho) System.out.println("Checkout realizado con exito");
+                        System.out.println("Pulsa una tecla para continuar");
+                        s.nextLine();
+                        for (int i = 0; i < 100; i++) System.out.println();
+                    }while (!checkoutHecho);
+                        break;
                 case "d":
                     System.out.println("Has escogido la opción: Menú de Administrador");
                     System.out.println("Introduce el usuario");
