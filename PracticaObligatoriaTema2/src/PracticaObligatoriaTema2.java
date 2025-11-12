@@ -807,6 +807,8 @@ public class PracticaObligatoriaTema2 {
                                         // si es solo un billete se pone en singular y si no en plural
                                     if (billete50ED == 1) System.out.print( billete50ED + " billete de 50 € "+ (cambio > 0.01 ? ",":""));
                                     if (billete50ED > 1) System.out.print( billete50ED + " billetes de 50 € "+ (cambio > 0.01 ? ",":""));
+                                    cambio = Math.round(cambio * 100);
+                                    cambio /= 100;
                                     while(cambio >= 20 && billete20E > 0){
                                         billete20ED++;
                                         cambio -= 20;
@@ -895,15 +897,16 @@ public class PracticaObligatoriaTema2 {
                                     }
                                     cambio = Math.round(cambio * 100);
                                     cambio /= 100;
-                                    if (moneda2CentD == 1) System.out.print( moneda2CentD + " moneda de 2 céntimos "+ (cambio > 0.01 ? ",":""));
-                                    if (moneda2CentD > 1) System.out.print( moneda2CentD + " monedas de 2 céntimos "+ (cambio > 0.01 ? ",":""));
-                                    while(cambio > 0.01 && moneda1Cent > 0){
+                                    if (moneda2CentD == 1) System.out.print( moneda2CentD + " moneda de 2 céntimos "+ (cambio >= 0.01 ? ",":""));
+                                    if (moneda2CentD > 1) System.out.print( moneda2CentD + " monedas de 2 céntimos "+ (cambio >= 0.01 ? ",":""));
+                                    while(cambio >= 0.01 && moneda1Cent > 0){
                                         moneda1CentD++;
                                         cambio -= 0.01;
                                         moneda1Cent--;
                                     }
                                     if (moneda1CentD == 1) System.out.print( moneda1CentD + " moneda de 1 céntimos "+ (cambio > 0.01 ? ",":""));
                                     if (moneda1CentD > 1) System.out.print( moneda1CentD + " monedas de 1 céntimos "+ (cambio > 0.01 ? ",":""));
+                                    if (cambio >= 0.01) System.out.println("falta cambio pero no tenemos mil disculpas");
                                     System.out.println("\nPulsa cualquier botón para salir... ");
                                     s.nextLine();
                                     for (int i = 0; i < 100; i++) {
