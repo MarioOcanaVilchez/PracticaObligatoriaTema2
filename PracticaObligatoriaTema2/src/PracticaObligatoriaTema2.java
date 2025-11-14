@@ -480,7 +480,7 @@ public class PracticaObligatoriaTema2 {
                             //Pedimos los datos para el checkout
                             System.out.println("Que dia quieres realizar el checkout");
                             do {
-                                System.out.println("Introduce el año de salida: ");
+                                System.out.print("Introduce el año de salida: ");
                                 anioSalida = Integer.parseInt(s.nextLine());
                                 if (anioSalida < ANIO_ACTUAL) System.out.println("Año no válido");
                             } while (anioSalida < ANIO_ACTUAL);
@@ -987,7 +987,7 @@ public class PracticaObligatoriaTema2 {
 
                                     switch (selecMenu2) {
                                         case "i"://Opción ver ingresos y reservas hechas en total
-                                            System.out.println("Has escogido la opción: Consultar los ingresos totales y el número de reservas finalizadas.");
+                                            System.out.println("Has escogido la opción: Consultar los ingresos totales y el número de reservas realizadas.");
                                             System.out.println("Los ingresos totales son: " + ingresos + "€");
                                             System.out.println("En total hemos hecho " + (numeroReservaActual - 1) + " reservas");
                                             System.out.println("Pulsa 1 para volver al menu de administrador o cualquier botón para salir...");
@@ -1050,6 +1050,7 @@ public class PracticaObligatoriaTema2 {
         } while (!selecMenu2.equals("iii"));
     }
 }
+
 
 
 
