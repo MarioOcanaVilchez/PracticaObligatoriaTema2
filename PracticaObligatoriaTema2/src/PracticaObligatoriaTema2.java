@@ -39,7 +39,9 @@ public class PracticaObligatoriaTema2 {
             System.out.print("""
                     ╔══════════════════════════════════════════════════╗
                     ║                                                  ║
-                    ║              HOTEL CIUDAD DE MARTOS              ║
+                    ║  ┓┏┏┓┏┳┓┏┓┓   ┏┓┳┳┳┳┓┏┓┳┓  ┳┓┏┓  ┳┳┓┏┓┳┓┏┳┓┏┓┏┓  ║
+                    ║  ┣┫┃┃ ┃ ┣ ┃   ┃ ┃┃┃┃┃┣┫┃┃  ┃┃┣   ┃┃┃┣┫┣┫ ┃ ┃┃┗┓  ║
+                    ║  ┛┗┗┛ ┻ ┗┛┗┛  ┗┛┻┗┛┻┛┛┗┻┛  ┻┛┗┛  ┛ ┗┛┗┛┗ ┻ ┗┛┗┛  ║
                     ║                                                  ║
                     ╠══════════════════════════════════════════════════╣
                     ║ a. Ver el estado de ocupación de las habitaciones║
@@ -960,9 +962,9 @@ public class PracticaObligatoriaTema2 {
                                 do {
                                     System.out.print("""
                                             ╔══════════════════════════════════════════════════════════════════════╗
-                                            ║                                                                      ║
-                                            ║                         MENÚ DE ADMINISTRADOR                        ║
-                                            ║                                                                      ║
+                                            ║          ┳┳┓┏┓┳┓┳┳  ┳┓┏┓  ┏┓┳┓┳┳┓┳┳┓┳┏┓┏┳┓┳┓┏┓┳┓┏┓┳┓                 ║
+                                            ║          ┃┃┃┣ ┃┃┃┃  ┃┃┣   ┣┫┃┃┃┃┃┃┃┃┃┗┓ ┃ ┣┫┣┫┃┃┃┃┣┫                 ║
+                                            ║          ┛ ┗┗┛┛┗┗┛  ┻┛┗┛  ┛┗┻┛┛ ┗┻┛┗┻┗┛ ┻ ┛┗┛┗┻┛┗┛┛┗                 ║
                                             ╠══════════════════════════════════════════════════════════════════════╣
                                             ║i. Consultar los ingresos totales y el número de reservas finalizadas ║
                                             ║ii. Consultar las monedas restantes para el cambio                    ║
@@ -1037,3 +1039,4 @@ public class PracticaObligatoriaTema2 {
         } while (!selecMenu2.equals("iii"));
     }
 }
+
