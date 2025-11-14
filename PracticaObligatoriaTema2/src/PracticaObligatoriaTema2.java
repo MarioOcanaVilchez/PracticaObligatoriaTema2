@@ -60,7 +60,13 @@ public class PracticaObligatoriaTema2 {
 
                     //Muestra si cada habitación está libre o ocupada junto con el nombre de la persona que ha reservado
                     System.out.println("Has escogido la opción: Ver el estado de ocupación de las habitaciones");
-                    System.out.println("\\ Ocupación del hotel //");
+                    System.out.println("""
+                               ____                              _                    __     __   __          __       __
+                              / __ \\_______  ______  ____ ______(_)___  ____     ____/ /__  / /  / /_  ____  / /____  / /
+                             / / / / ___/ / / / __ \\/ __ `/ ___/ / __ \\/ __ \\   / __  / _ \\/ /  / __ \\/ __ \\/ __/ _ \\/ /\s
+                            / /_/ / /__/ /_/ / /_/ / /_/ / /__/ / /_/ / / / /  / /_/ /  __/ /  / / / / /_/ / /_/  __/ / \s
+                            \\____/\\___/\\__,_/ .___/\\__,_/\\___/_/\\____/_/ /_/   \\__,_/\\___/_/  /_/ /_/\\____/\\__/\\___/_/  \s
+                                           /_/                                                                          \s""");
                     System.out.println((habitacion1Ind ? "La habitación 101 está ocupada por " + nombre101 : "La habitación 101 está libre"));
                     System.out.println((habitacion2Ind ? "La habitación 102 está ocupada por " + nombre102 : "La habitación 102 está libre"));
                     System.out.println((habitacion1Doble ? "La habitación 201 está ocupada por " + nombre201 : "La habitación 201 está libre"));
@@ -755,8 +761,13 @@ public class PracticaObligatoriaTema2 {
 
 
                             //Generamos la factura
-                            System.out.printf("""
-                                   \\ Factura //
+                           System.out.printf("""
+                                        ______           __                 \s
+                                       / ____/___ ______/ /___  ___________ _
+                                      / /_  / __ `/ ___/ __/ / / / ___/ __ `/
+                                     / __/ / /_/ / /__/ /_/ /_/ / /  / /_/ /\s
+                                    /_/    \\__,_/\\___/\\__/\\__,_/_/   \\__,_/ \s
+                                    
                                     Companía: Hotel ciudad de Martos
                                     Teléfono: 673 35 35 08
                                     Dirección: Calle Molino Medel Nº 93
@@ -769,7 +780,7 @@ public class PracticaObligatoriaTema2 {
                                     Noches: %d
                                     Tarifa: %d
                                     Monto: %d
-                                    IBA: %.2f
+                                    IVA: %.2f
                                     Precio final: %.2f""",pax,noches,tarifa,monto,ibaAPagar,precioFinal);
 
                             //Preguntamos cuanto va a introducir para pagar
@@ -1039,4 +1050,5 @@ public class PracticaObligatoriaTema2 {
         } while (!selecMenu2.equals("iii"));
     }
 }
+
 
