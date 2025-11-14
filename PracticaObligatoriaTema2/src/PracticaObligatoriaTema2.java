@@ -478,19 +478,19 @@ public class PracticaObligatoriaTema2 {
                     do {
                         do {
                             //Pedimos los datos para el checkout
-                            System.out.println("Que dia quieres simular el checkout");
+                            System.out.println("Que dia quieres realizar el checkout");
                             do {
-                                System.out.println("Introduce el año: ");
+                                System.out.println("Introduce el año de salida: ");
                                 anioSalida = Integer.parseInt(s.nextLine());
                                 if (anioSalida < ANIO_ACTUAL) System.out.println("Año no válido");
                             } while (anioSalida < ANIO_ACTUAL);
                             do {
-                                System.out.print("Introduce el mes: ");
+                                System.out.print("Introduce el mes de salida: ");
                                 mesSalida = Integer.parseInt(s.nextLine());
                                 if (mesSalida > MES_MAX) System.out.println("Mes no existente");
                             } while (mesSalida > MES_MAX || mesSalida <= 0);
                             do {
-                                System.out.print("Introduce el dia: ");
+                                System.out.print("Introduce el dia de salida: ");
                                 diaSalida = Integer.parseInt(s.nextLine());
                                 switch (mesSalida) {
                                     case 1, 3, 5, 7, 8, 10, 12:
@@ -1050,5 +1050,6 @@ public class PracticaObligatoriaTema2 {
         } while (!selecMenu2.equals("iii"));
     }
 }
+
 
 
