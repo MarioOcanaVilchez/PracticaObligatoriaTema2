@@ -65,7 +65,7 @@ public class PracticaObligatoriaTema2 {
                               / __ \\_______  ______  ____ ______(_)___  ____     ____/ /__  / /  / /_  ____  / /____  / /
                              / / / / ___/ / / / __ \\/ __ `/ ___/ / __ \\/ __ \\   / __  / _ \\/ /  / __ \\/ __ \\/ __/ _ \\/ /\s
                             / /_/ / /__/ /_/ / /_/ / /_/ / /__/ / /_/ / / / /  / /_/ /  __/ /  / / / / /_/ / /_/  __/ / \s
-                            \\____/\\___/\\__,_/ .___/\\__,_/\\___/_/\\____/_/ /_/   \\__,_/\\___/_/  /_/ /_/\\____/\\__/\\___/_/  \s
+                            \\____/\\___/\\__,_/ .___/\\/ /_/\\___/_/\\____/_/ /_/   \\__,_/\\___/_/  /_/ /_/\\____/\\__/\\___/_/  \s
                                            /_/                                                                          \s""");
                     System.out.println((habitacion1Ind ? "La habitación 101 está ocupada por " + nombre101 : "La habitación 101 está libre"));
                     System.out.println((habitacion2Ind ? "La habitación 102 está ocupada por " + nombre102 : "La habitación 102 está libre"));
@@ -104,9 +104,9 @@ public class PracticaObligatoriaTema2 {
                                     //Pedimos nombre de quien está a cargo
                                     do {
                                         caracterValido = 0;
-                                    System.out.print("Introduce el nombre de la persona a cargo de la reserva: ");
-                                    nombre101 = s.nextLine();
-                                    //Validamos el nombre
+                                        System.out.print("Introduce el nombre de la persona a cargo de la reserva: ");
+                                        nombre101 = s.nextLine();
+                                        //Validamos el nombre
                                         for (int i = 0; i < nombre101.length(); i++) {
                                             if (Character.isLetter(nombre101.charAt(i)) || Character.isWhitespace(nombre101.charAt(i)))
                                                 caracterValido++;
@@ -478,7 +478,7 @@ public class PracticaObligatoriaTema2 {
                     do {
                         do {
                             //Pedimos los datos para el checkout
-                            System.out.println("Que dia quieres realizar el checkout");
+                            System.out.println("¿Que dia quieres realizar el checkout?");
                             do {
                                 System.out.print("Introduce el año de salida: ");
                                 anioSalida = Integer.parseInt(s.nextLine());
@@ -554,7 +554,7 @@ public class PracticaObligatoriaTema2 {
                                             selecValida = false;
                                         }
                                         break;
-                                        //El código del resto es igual cambiando el nombre de las variables específicas
+                                    //El código del resto es igual cambiando el nombre de las variables específicas
                                     case "102":
                                         if (habitacion2Ind) {
                                             inicioOcupacion = inicioHabitacion102;
@@ -761,12 +761,12 @@ public class PracticaObligatoriaTema2 {
 
 
                             //Generamos la factura
-                           System.out.printf("""
+                            System.out.printf("""
                                         ______           __                 \s
                                        / ____/___ ______/ /___  ___________ _
                                       / /_  / __ `/ ___/ __/ / / / ___/ __ `/
                                      / __/ / /_/ / /__/ /_/ /_/ / /  / /_/ /\s
-                                    /_/    \\__,_/\\___/\\__/\\__,_/_/   \\__,_/ \s
+                                    /_/    \\/ /_/\\___/\\__/\\__,_/_/   \\/ /_/ \s
                                     
                                     Companía: Hotel ciudad de Martos
                                     Teléfono: 673 35 35 08
@@ -805,19 +805,19 @@ public class PracticaObligatoriaTema2 {
                                     moneda5CentD = 0;
                                     moneda2CentD = 0;
                                     moneda1CentD = 0;
-                                        cambio = dineroIntroducido - precioFinal;
+                                    cambio = dineroIntroducido - precioFinal;
 
-                                        //No sé que pasa pero si no se ponen las siguientes 2 líneas el cambio puede quedar muy poco por debajo y descuadrar las monedas que hay que dar
-                                        cambio = Math.round(cambio * 100);
-                                        cambio /= 100;
-                                        // mientras el cambio sea mayor que 50 se le da un billete de 50
-                                        while(cambio >= 50 && billete50E > 0){
-                                            billete50ED++;
-                                            cambio -= 50;
-                                            billete50E--;
-                                        }
+                                    //No sé que pasa pero si no se ponen las siguientes 2 líneas el cambio puede quedar muy poco por debajo y descuadrar las monedas que hay que dar
+                                    cambio = Math.round(cambio * 100);
+                                    cambio /= 100;
+                                    // mientras el cambio sea mayor que 50 se le da un billete de 50
+                                    while(cambio >= 50 && billete50E > 0){
+                                        billete50ED++;
+                                        cambio -= 50;
+                                        billete50E--;
+                                    }
                                     System.out.print("El cambio es: ");
-                                        // si es solo un billete se pone en singular y si no en plural
+                                    // si es solo un billete se pone en singular y si no en plural
                                     if (billete50ED == 1) System.out.print( billete50ED + " billete de 50 € "+ (cambio > 0.01 ? ",":""));
                                     if (billete50ED > 1) System.out.print( billete50ED + " billetes de 50 € "+ (cambio > 0.01 ? ",":""));
                                     cambio = Math.round(cambio * 100);
@@ -987,7 +987,7 @@ public class PracticaObligatoriaTema2 {
 
                                     switch (selecMenu2) {
                                         case "i"://Opción ver ingresos y reservas hechas en total
-                                            System.out.println("Has escogido la opción: Consultar los ingresos totales y el número de reservas realizadas.");
+                                            System.out.println("Has escogido la opción: Consultar los ingresos totales y el número de reservas finalizadas.");
                                             System.out.println("Los ingresos totales son: " + ingresos + "€");
                                             System.out.println("En total hemos hecho " + (numeroReservaActual - 1) + " reservas");
                                             System.out.println("Pulsa 1 para volver al menu de administrador o cualquier botón para salir...");
@@ -1037,20 +1037,18 @@ public class PracticaObligatoriaTema2 {
                         }
 
                     }while(selecMenu.equals("1") && !user.equals(ADMIN_USER) || !password.equals(ADMIN_PASSWORD));
-                        break;
-                        default:
-                            System.out.println("Error opción no válida");
-                            System.out.println("Pulsa cualquier botón para volver al menú");
-                            s.nextLine();
-                            for (int i = 0; i < 100; i++) {
-                                System.out.println();
-                            }
+                    break;
+                default:
+                    System.out.println("Error opción no válida");
+                    System.out.println("Pulsa cualquier botón para volver al menú");
+                    s.nextLine();
+                    for (int i = 0; i < 100; i++) {
+                        System.out.println();
+                    }
 
             }
         } while (!selecMenu2.equals("iii"));
     }
 }
-
-
 
 
